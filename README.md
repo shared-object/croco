@@ -1,4 +1,4 @@
-# croco 🐊
+# croco 
 
 A tiny, **zero-dependency** asynchronous runtime for C in a single header file (`croco.h`).
 
@@ -8,26 +8,27 @@ Croco brings Go-like concurrency to pure C: lightweight coroutines, buffered CSP
 
 ---
 
-## ⚡ Why Croco?
+##  Why Croco?
 
-* **Zero Dependencies**: Requires only standard libc and Linux kernel syscalls. No `libuv`, no `libevent`, no `pthreads`, no external packages.
-* **Single Header**: Just drop `croco.h` into your project and `#define CROCO_IMPLEMENTATION` in one C file.
-* **Go-Style Concurrency in C**: Spawn tasks with `croco_go`, synchronize with typed channels (`chan_send` / `chan_recv`), and write asynchronous network code that looks clean and synchronous.
-* **Zero-CPU Idle**: Driven by Linux `epoll`. If all coroutines are waiting for network packets or timers, the thread sleeps in the kernel with **0.00% CPU usage**.
+- **Zero Dependencies**: Requires only standard libc and Linux kernel syscalls. No `libuv`, no `libevent`, no `pthreads`, no external packages.
+- **Single Header**: Just drop `croco.h` into your project and `#define CROCO_IMPLEMENTATION` in one C file.
+- **Go-Style Concurrency in C**: Spawn tasks with `croco_go`, synchronize with typed channels (`chan_send` / `chan_recv`), and write asynchronous network code that looks clean and synchronous.
+- **Zero-CPU Idle**: Driven by Linux `epoll`. If all coroutines are waiting for network packets or timers, the thread sleeps in the kernel with **0.00% CPU usage**.
 
 ---
 
-## ⚠️ Supported Platforms
+##  Supported Platforms
 
+> [!WARNING]
 > **Croco supports Linux on `x86_64` and `aarch64` (ARM64 / Raspberry Pi / AWS Graviton / Docker on Apple Silicon).**  
 > It will **NOT** run on Windows or macOS.
 > 
-> * Hand-written assembly context switches for both **x86_64** and **AArch64**.
-> * The I/O engine relies on Linux-specific **`epoll`** and **`accept4`**.
+> - Hand-written assembly context switches for both **x86_64** and **AArch64**.
+> - The I/O engine relies on Linux-specific **`epoll`** and **`accept4`**.
 
 ---
 
-## 📚 Core API Cheat Sheet
+##  Core API Cheat Sheet
 
 ### 1. Coroutines & Lifecycle
 ```c
@@ -73,7 +74,7 @@ int     croco_accept(int listener_fd, struct sockaddr *addr, socklen_t *addrlen)
 
 ---
 
-## 💬 Examples: Multi-Client Async Chat
+##  Examples: Multi-Client Async Chat
 
 The [`examples/`](examples/) directory contains a complete interactive TCP chat demonstrating coroutines, async socket I/O, and async terminal keyboard input simultaneously.
 
@@ -106,6 +107,6 @@ nc 127.0.0.1 9090
 
 ---
 
-## 📄 License
+##  License
 
 MIT License.
