@@ -1,0 +1,19 @@
+# Binaries and build outputs
+/server
+/client
+/main
+examples/server
+examples/client
+*.o
+*.a
+*.so
+*.out
+*.dSYM/
+
+# Temporary files and editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
