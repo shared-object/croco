@@ -1,4 +1,4 @@
-# croco 
+# croco
 
 A tiny, **zero-dependency** asynchronous runtime for C in a single header file (`croco.h`).
 
@@ -8,7 +8,7 @@ Croco brings Go-like concurrency to pure C: lightweight coroutines, buffered CSP
 
 ---
 
-##  Why Croco?
+## :zap: Why Croco?
 
 - **Zero Dependencies**: Requires only standard libc and Linux kernel syscalls. No `libuv`, no `libevent`, no `pthreads`, no external packages.
 - **Single Header**: Just drop `croco.h` into your project and `#define CROCO_IMPLEMENTATION` in one C file.
@@ -17,7 +17,7 @@ Croco brings Go-like concurrency to pure C: lightweight coroutines, buffered CSP
 
 ---
 
-##  Supported Platforms
+## :warning: Supported Platforms
 
 > [!WARNING]
 > **Croco supports Linux on `x86_64` and `aarch64` (ARM64 / Raspberry Pi / AWS Graviton / Docker on Apple Silicon).**  
@@ -28,7 +28,7 @@ Croco brings Go-like concurrency to pure C: lightweight coroutines, buffered CSP
 
 ---
 
-##  Core API Cheat Sheet
+## :book: Core API Cheat Sheet
 
 ### 1. Coroutines & Lifecycle
 ```c
@@ -74,7 +74,7 @@ int     croco_accept(int listener_fd, struct sockaddr *addr, socklen_t *addrlen)
 
 ---
 
-##  Examples: Multi-Client Async Chat
+## :speech_balloon: Examples: Multi-Client Async Chat
 
 The [`examples/`](examples/) directory contains a complete interactive TCP chat demonstrating coroutines, async socket I/O, and async terminal keyboard input simultaneously.
 
@@ -107,6 +107,6 @@ nc 127.0.0.1 9090
 
 ---
 
-##  License
+## :scroll: License
 
 MIT License.
