@@ -1,17 +1,9 @@
-CC = gcc
-CFLAGS = -Wall -Wextra -ggdb -I.
+EXAMPLES = chat fileio
 
-TARGETS = server client
-
-all: $(TARGETS)
-
-server: examples/server.c croco.h
-	$(CC) $(CFLAGS) $< -o $@
-
-client: examples/client.c croco.h
-	$(CC) $(CFLAGS) $< -o $@
+all:
+	@for d in $(EXAMPLES); do $(MAKE) -C examples/$$d || exit 1; done
 
 clean:
-	rm -f $(TARGETS) examples/server examples/client
+	@for d in $(EXAMPLES); do $(MAKE) -C examples/$$d clean; done
 
 .PHONY: all clean
